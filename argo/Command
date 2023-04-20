@@ -1,0 +1,8 @@
+## create ns
+kubectl create namespace argocd
+
+## install
+kubectl apply -n argocd -f [https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml](https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml)
+
+## can change service type
+k patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
